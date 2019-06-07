@@ -1972,130 +1972,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      user: {
-        email: '',
-        password: ''
-      }
+      developers: {}
     };
   },
   components: {
     bbContact: _Contact_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  created: function created() {
+    this.fetchDevelopers();
+  },
+  methods: {
+    fetchDevelopers: function fetchDevelopers() {
+      var _this = this;
+
+      axios.get('/api/developers').then(function (res) {
+        return res.data;
+      }).then(function (res) {
+        if (res.status == 1) {
+          _this.developers = res.data.developers;
+        }
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
   }
 });
 
@@ -37828,356 +37731,108 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._m(0), _vm._v(" "), _c("bb-contact")], 1)
+  return _c(
+    "div",
+    [
+      _c("section", { staticClass: "padding", attrs: { id: "our-team-two" } }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.developers, function(developer) {
+              return _c(
+                "div",
+                { key: developer.id, staticClass: "col-lg-3 col-md-6" },
+                [
+                  _c("div", { staticClass: "team-box no-hover top60" }, [
+                    _c("div", { staticClass: "image" }, [
+                      _c("img", { attrs: { src: developer.photo_url } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "team-content gradient_bg" }, [
+                      _c("h3", [_vm._v(_vm._s(developer.name))]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(_vm._s(developer.title))]),
+                      _vm._v(" "),
+                      _c("ul", { staticClass: "social-icons" }, [
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href: developer.linkedin,
+                                target: "_blank"
+                              }
+                            },
+                            [_c("i", { staticClass: "fa fa-linkedin" })]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href: developer.facebook,
+                                target: "_blank"
+                              }
+                            },
+                            [_c("i", { staticClass: "fa fa-facebook" })]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href: developer.twitter,
+                                target: "_blank"
+                              }
+                            },
+                            [_c("i", { staticClass: "fa fa-twitter" })]
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("bb-contact")
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "section",
-      { staticClass: "padding", attrs: { id: "our-team-two" } },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "col-md-8 offset-md-2 col-sm-12 text-center" },
-              [
-                _c("div", { staticClass: "heading-title" }, [
-                  _c("span", [_vm._v("Heros Behind the Success")]),
-                  _vm._v(" "),
-                  _c("h2", { staticClass: "darkcolor bottom20" }, [
-                    _vm._v("Creative Team")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed suscipit. Vestibulum auctor nunc vitae diam eleifend, in maximus metus sollicitudin. Quisque vitae sodales lectus. Nam porttitor justo sed mi finibus, vel tristique risus faucibus. "
-                    )
-                  ])
-                ])
-              ]
-            )
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-8 offset-md-2 col-sm-12 text-center" }, [
+        _c("div", { staticClass: "heading-title" }, [
+          _c("span", [_vm._v("Heros Behind the Success")]),
+          _vm._v(" "),
+          _c("h2", { staticClass: "darkcolor bottom20" }, [
+            _vm._v("Creative Team")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-3 col-md-6" }, [
-              _c("div", { staticClass: "team-box no-hover top60" }, [
-                _c("div", { staticClass: "image" }, [
-                  _c("img", {
-                    attrs: {
-                      src: __webpack_require__(/*! ../assets/images/team-4.jpg */ "./resources/js/assets/images/team-4.jpg"),
-                      alt: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "team-content gradient_bg" }, [
-                  _c("h3", [_vm._v("Johny Walkin.")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("CEO, The XeOne Company")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "social-icons" }, [
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-facebook" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-twitter" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-whatsapp" })
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3 col-md-6" }, [
-              _c("div", { staticClass: "team-box no-hover top60" }, [
-                _c("div", { staticClass: "image" }, [
-                  _c("img", {
-                    attrs: {
-                      src: __webpack_require__(/*! ../assets/images/team-5.jpg */ "./resources/js/assets/images/team-5.jpg"),
-                      alt: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "team-content gradient_bg" }, [
-                  _c("h3", [_vm._v("Nelson Wavel")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Designer, The XeOne Company")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "social-icons" }, [
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-facebook" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-twitter" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-whatsapp" })
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3 col-md-6 top60" }, [
-              _c("div", { staticClass: "team-box no-hover" }, [
-                _c("div", { staticClass: "image" }, [
-                  _c("img", {
-                    attrs: {
-                      src: __webpack_require__(/*! ../assets/images/team-6.jpg */ "./resources/js/assets/images/team-6.jpg"),
-                      alt: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "team-content gradient_bg" }, [
-                  _c("h3", [_vm._v("Teena Walkin")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Model, The XeOne Company")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "social-icons" }, [
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-facebook" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-twitter" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-whatsapp" })
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3 col-md-6" }, [
-              _c("div", { staticClass: "team-box no-hover top60" }, [
-                _c("div", { staticClass: "image" }, [
-                  _c("img", {
-                    attrs: {
-                      src: __webpack_require__(/*! ../assets/images/team-7.jpg */ "./resources/js/assets/images/team-7.jpg"),
-                      alt: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "team-content gradient_bg" }, [
-                  _c("h3", [_vm._v("Jack Walkin.")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("CEO, The XeOne Company")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "social-icons" }, [
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-facebook" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-twitter" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-whatsapp" })
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3 col-md-6" }, [
-              _c("div", { staticClass: "team-box no-hover top60" }, [
-                _c("div", { staticClass: "image" }, [
-                  _c("img", {
-                    attrs: {
-                      src: __webpack_require__(/*! ../assets/images/team-4.jpg */ "./resources/js/assets/images/team-4.jpg"),
-                      alt: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "team-content gradient_bg" }, [
-                  _c("h3", [_vm._v("Johny Walkin.")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("CEO, The XeOne Company")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "social-icons" }, [
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-facebook" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-twitter" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-whatsapp" })
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3 col-md-6" }, [
-              _c("div", { staticClass: "team-box no-hover top60" }, [
-                _c("div", { staticClass: "image" }, [
-                  _c("img", {
-                    attrs: {
-                      src: __webpack_require__(/*! ../assets/images/team-5.jpg */ "./resources/js/assets/images/team-5.jpg"),
-                      alt: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "team-content gradient_bg" }, [
-                  _c("h3", [_vm._v("Nelson Wavel")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Designer, The XeOne Company")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "social-icons" }, [
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-facebook" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-twitter" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-whatsapp" })
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3 col-md-6 top60" }, [
-              _c("div", { staticClass: "team-box no-hover" }, [
-                _c("div", { staticClass: "image" }, [
-                  _c("img", {
-                    attrs: {
-                      src: __webpack_require__(/*! ../assets/images/team-6.jpg */ "./resources/js/assets/images/team-6.jpg"),
-                      alt: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "team-content gradient_bg" }, [
-                  _c("h3", [_vm._v("Teena Walkin")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Model, The XeOne Company")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "social-icons" }, [
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-facebook" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-twitter" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-whatsapp" })
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3 col-md-6" }, [
-              _c("div", { staticClass: "team-box no-hover top60" }, [
-                _c("div", { staticClass: "image" }, [
-                  _c("img", {
-                    attrs: {
-                      src: __webpack_require__(/*! ../assets/images/team-7.jpg */ "./resources/js/assets/images/team-7.jpg"),
-                      alt: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "team-content gradient_bg" }, [
-                  _c("h3", [_vm._v("Jack Walkin.")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("CEO, The XeOne Company")]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "social-icons" }, [
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-facebook" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-twitter" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                        _c("i", { staticClass: "fa fa-whatsapp" })
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ])
+          _c("p", [
+            _vm._v(
+              "Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed suscipit. Vestibulum auctor nunc vitae diam eleifend, in maximus metus sollicitudin. Quisque vitae sodales lectus. Nam porttitor justo sed mi finibus, vel tristique risus faucibus. "
+            )
           ])
         ])
-      ]
-    )
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -53332,50 +52987,6 @@ var app = new Vue({
   router: _router_js__WEBPACK_IMPORTED_MODULE_0__["router"],
   el: '#app'
 });
-
-/***/ }),
-
-/***/ "./resources/js/assets/images/team-4.jpg":
-/*!***********************************************!*\
-  !*** ./resources/js/assets/images/team-4.jpg ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/team-4.jpg?d019d4cc8582b50d09e916e6ad7a1dbf";
-
-/***/ }),
-
-/***/ "./resources/js/assets/images/team-5.jpg":
-/*!***********************************************!*\
-  !*** ./resources/js/assets/images/team-5.jpg ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/team-5.jpg?d019d4cc8582b50d09e916e6ad7a1dbf";
-
-/***/ }),
-
-/***/ "./resources/js/assets/images/team-6.jpg":
-/*!***********************************************!*\
-  !*** ./resources/js/assets/images/team-6.jpg ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/team-6.jpg?d019d4cc8582b50d09e916e6ad7a1dbf";
-
-/***/ }),
-
-/***/ "./resources/js/assets/images/team-7.jpg":
-/*!***********************************************!*\
-  !*** ./resources/js/assets/images/team-7.jpg ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/team-7.jpg?d019d4cc8582b50d09e916e6ad7a1dbf";
 
 /***/ }),
 
