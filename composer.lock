@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a51221775d5309bfa40d8cecf1982aa3",
+    "content-hash": "a8d932da7659430beb235b55c4c57f25",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -1692,6 +1692,44 @@
                 "storage"
             ],
             "time": "2019-05-20T20:21:14+00:00"
+        },
+        {
+            "name": "lersoft/laravel-thumbnail",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leartgjoni/laravel-thumbnail.git",
+                "reference": "99fc0198f51bb892114a679370cdca2a04e50e60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leartgjoni/laravel-thumbnail/zipball/99fc0198f51bb892114a679370cdca2a04e50e60",
+                "reference": "99fc0198f51bb892114a679370cdca2a04e50e60",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.5",
+                "intervention/image": "^2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lersoft\\LaravelThumbnail\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Leart Gjoni",
+                    "email": "contact@leartgjoni.com",
+                    "homepage": "http://leartgjoni.com"
+                }
+            ],
+            "description": "Laravel Package to resize images on the fly with cache functionalities.",
+            "time": "2018-03-09T20:42:54+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5875,7 +5913,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "lersoft/laravel-thumbnail": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -3,9 +3,11 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-lg bg-dark static-nav" style="background-color: #000000;">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <h3>Developer's Band</h3>
-                </a>
+                <router-link to="/">
+                    <a class="navbar-brand" href="index.html">
+                        <h3>Developer's Band</h3>
+                    </a>
+                </router-link>
                 <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#xenav">
                     <span> </span>
                     <span> </span>
@@ -15,6 +17,9 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
                             <router-link to="/"><a class="nav-link">Home</a></router-link>
+                        </li>
+                        <li class="nav-item active">
+                            <router-link to="/bands"><a class="nav-link">Bands</a></router-link>
                         </li>
                         <li class="nav-item active">
                             <router-link to="/story"><a class="nav-link">Story</a></router-link>
@@ -33,13 +38,16 @@
                 <nav class="side-nav">
                     <ul class="navbar-nav w-100">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#home">Home</a>
-                        </li>       
+                            <router-link to="/"><a class="nav-link">Home</a></router-link>
+                        </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#home">Story</a>
-                        </li>                 
+                            <router-link to="/bands"><a class="nav-link">Bands</a></router-link>
+                        </li>
+                        <li class="nav-item active">
+                            <router-link to="/story"><a class="nav-link">Story</a></router-link>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contactus">contact</a>
+                            <router-link to="/contact"><a class="nav-link">Contact</a></router-link>
                         </li>
                     </ul>
                 </nav>

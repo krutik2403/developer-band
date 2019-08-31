@@ -18,6 +18,11 @@ const routes = [
         path: '/contact', 
         name: 'contact',
         component: require('./components/Contact.vue').default 
+    },
+    { 
+        path: '/bands', 
+        name: 'bands',
+        component: require('./components/bands.vue').default 
     }
 ]
   

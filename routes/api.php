@@ -14,3 +14,8 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/developers', 'API\DevelopersController@index')->name('developes-list');
+Route::post('/send/contact/inquiry', 'API\DevelopersController@sendInquiry')->name('send-inquiry');
+Route::get('/story', 'API\DevelopersController@story')->name('story');
+
+
+Route::get('/bands', 'API\BandController@index')->name('bands');
